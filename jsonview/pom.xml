@@ -8,24 +8,31 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mengyunzhi.sample</groupId>
-	<artifactId>log-back</artifactId>
+	<groupId>com.mengyunzhi.springBootSampleCode</groupId>
+	<artifactId>jsonview</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>log-back</name>
+	<name>jsonview</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
-	<modules>
-		<module>service</module>
-	</modules>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -34,26 +41,13 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<dependency>
-			<groupId>org.logback-extensions</groupId>
-			<artifactId>logback-ext-loggly</artifactId>
-			<version>0.1.5</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.54</version>
+			<scope>test</scope>
 		</dependency>
 
-		<!--log to json-->
-		<dependency>
-			<groupId>ch.qos.logback.contrib</groupId>
-			<artifactId>logback-jackson</artifactId>
-			<version>0.1.5</version>
-		</dependency>
-
-		<!--log to json-->
-		<dependency>
-			<groupId>ch.qos.logback.contrib</groupId>
-			<artifactId>logback-json-classic</artifactId>
-			<version>0.1.5</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -64,5 +58,19 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 </project>
